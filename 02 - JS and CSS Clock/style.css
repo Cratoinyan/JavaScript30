@@ -1,0 +1,10 @@
+html{
+    background-color: turquoise;
+}
+
+.circle{
+    width: auto;
+    height: auto;
+    border-radius: 100%;
+    border-color: white;
+}
