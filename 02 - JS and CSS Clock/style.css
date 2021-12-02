@@ -12,8 +12,20 @@ html{
 .circle{
     width: 30em;
     height: 30em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 100%;
     border-width: 1em;
+    border-style: solid;
+    border-color: white;
+}
+
+.hour{
+    width: 0.01em;
+    height: 15em;
+    border-radius: 20%;
+    border-width: 0.5em;
     border-style: solid;
     border-color: white;
 }
