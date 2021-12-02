@@ -2,9 +2,18 @@ html{
     background-color: turquoise;
 }
 
+.clock{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15em;
+}
+
 .circle{
-    width: auto;
-    height: auto;
+    width: 30em;
+    height: 30em;
     border-radius: 100%;
+    border-width: 1em;
+    border-style: solid;
     border-color: white;
 }
