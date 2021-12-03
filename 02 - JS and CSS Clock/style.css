@@ -19,13 +19,50 @@ html{
     border-width: 1em;
     border-style: solid;
     border-color: white;
+    position: relative;
+}
+
+.outerDot{
+    width: 3em;
+    height: 3em;
+    background-color: white;
+    border-radius: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.innerDot{
+    width: 1.5em;
+    height: 1.5em;
+    background-color: black;
+    border-radius: 100%;
+    position: absolute;
+    z-index: 2;
 }
 
 .hour{
-    width: 0.01em;
-    height: 15em;
-    border-radius: 20%;
-    border-width: 0.5em;
-    border-style: solid;
-    border-color: white;
+    width: 1em;
+    height: 20em;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(64,224,208,1) 50%);
+    transform: rotate(45deg);
+    position: absolute;
+}
+
+.min{
+    width: 0.7em;
+    height: 28em;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(64,224,208,1) 50%);
+    transform: rotate(90deg);
+    position: absolute;
+}
+
+.sec{
+    width: 0.5em;
+    height: 30em;
+    border-radius: 30%;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(64,224,208,1) 50%);
+    transform: rotate(60deg);
+    position: absolute;
 }
