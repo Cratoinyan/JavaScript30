@@ -5,8 +5,8 @@ html{
 }
 
 .image{
-    width: 30em;
-    height: 30em;
+    width: 50em;
+    height: 50em;
     background: url("background.jpg");
     background-size: cover;
     border-radius: 1%;
@@ -15,10 +15,8 @@ html{
 }
 
 #image-container{
-    width: 50em;
-    height: 50em;
     border-style: solid;
     border-color: brown;
-    border-width: 2em;
+    border-width: 1em;
     background-color:burlywood;
 }

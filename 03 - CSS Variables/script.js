@@ -17,8 +17,7 @@ function changeBlur(){
 }
 
 function changeSpacing(){
-    image.style.width = `${space.value}em`;
-    image.style.height = `${space.value}em`;
+    container.style.borderWidth = `1.${space.value}em`;
 }
 
 function changeColor(){
