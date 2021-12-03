@@ -23,8 +23,8 @@ html{
 }
 
 .outerDot{
-    width: 3em;
-    height: 3em;
+    width: 2em;
+    height: 2em;
     background-color: white;
     border-radius: 100%;
     position: absolute;
@@ -32,8 +32,8 @@ html{
 }
 
 .innerDot{
-    width: 1.5em;
-    height: 1.5em;
+    width: 0.7em;
+    height: 0.7em;
     background-color: black;
     border-radius: 100%;
     position: absolute;
@@ -42,27 +42,30 @@ html{
 
 .hour{
     width: 1em;
-    height: 20em;
+    height: 18em;
     border-radius: 50%;
-    background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(64,224,208,1) 50%);
-    transform: rotate(45deg);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(64,224,208,0) 50%);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0, 2.85, 0.58, 1);
     position: absolute;
 }
 
 .min{
     width: 0.7em;
-    height: 28em;
+    height: 26em;
     border-radius: 50%;
-    background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(64,224,208,1) 50%);
-    transform: rotate(90deg);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(64,224,208,0) 50%);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0, 2.85, 0.58, 1);
     position: absolute;
 }
 
 .sec{
     width: 0.5em;
-    height: 30em;
+    height: 29em;
     border-radius: 30%;
-    background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(64,224,208,1) 50%);
-    transform: rotate(60deg);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(64,224,208,0) 50%);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0, 2.85, 0.58, 1);
     position: absolute;
 }
