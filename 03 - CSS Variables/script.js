@@ -21,5 +21,5 @@ function changeSpacing(){
 }
 
 function changeColor(){
-    container.style.backgroundColor = `${color.value}`;
+    container.style.borderColor = `${color.value}`;
 }
