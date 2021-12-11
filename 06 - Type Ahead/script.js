@@ -19,9 +19,13 @@ function findMatches(e){
     });
 
     const html = matches.map(place => {
+        const regex = RegExp(e.target.value,"gi");
+        const cityName = place.city.replace(regex,`<span class="hl">${e.target.value}</span>`);
+        const stateName = place.state.replace(regex,`<span class="hl">${e.target.value}</span>`);
+
         return `
         <li>
-            <span> ${place.city}, ${place.state}</span>
+            <span> ${cityName}, ${stateName}</span>
             <span> ${place.population}</span>
         </li>`;
     }).join("");
