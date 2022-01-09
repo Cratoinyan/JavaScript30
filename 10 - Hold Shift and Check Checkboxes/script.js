@@ -8,14 +8,15 @@ function checked(e){
     let inBetween = false;
 
     if(e.shiftKey && this.checked){
-        //console.log(e);
         checkboxes.forEach(checkbox => {
-            if(checkbox == lastChecked)
+            if((checkbox == lastChecked || checkbox == this) && !inBetween){
                 inBetween = true;
-            else if(inBetween && !checkbox.checked)
+            }
+            else if(checkbox == lastChecked || checkbox == this){
+                inBetween = false;
+            }
+            if(inBetween && !checkbox.checked)
                 checkbox.checked = true;
-            else if(checkbox == this)
-                return inBetween = false;
         })
     }
     
