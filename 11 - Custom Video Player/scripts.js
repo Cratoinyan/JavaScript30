@@ -40,7 +40,6 @@ function skipToTime(e){
 }
 
 function skipToTimeWithArrows(e){
-    console.log(e);
     if(e.code == 'ArrowRight'){
         video.currentTime = video.currentTime + 25;
     }
