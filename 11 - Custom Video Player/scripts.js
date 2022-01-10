@@ -23,16 +23,12 @@ function togglePlayWithSpace(e){
 }
 
 function updatePlayButton(){
-    let icon = this.paused ? '►' : '❚❚';
+    const icon = this.paused ? '►' : '❚❚';
     toggle.textContent = icon;
 }
 
-function adjustVolume(e){
-    video.volume = this.value;
-}
-
-function adjustPlaybackRate(){
-    video.playbackRate = this.value;
+function adjustSliders(){
+    video[this.name] = this.value;
 }
 
 function skipToTime(e){
@@ -42,11 +38,13 @@ function skipToTime(e){
         video.currentTime = video.currentTime + 25;
 }
 
+function adjsutProgressBar(){
+    const progressPercent = (video.currentTime / video.duration) * 100;
+    progressBar.style.flexBasis = `${progressPercent}%`;
+}
+
 ranges.forEach(slider => {
-    if(slider.name == 'volume')
-        slider.addEventListener('input', adjustVolume);
-    else if(slider.name == 'playbackRate')
-        slider.addEventListener('input', adjustPlaybackRate);
+    slider.addEventListener('input',adjustSliders);
 });
 
 skipButtons.forEach(button => {
@@ -55,6 +53,7 @@ skipButtons.forEach(button => {
 
 document.addEventListener('keydown', togglePlayWithSpace);
 video.addEventListener('click', togglePlayWithClick);
+video.addEventListener('timeupdate', adjsutProgressBar);
 video.addEventListener('play',updatePlayButton);
 video.addEventListener('pause',updatePlayButton);
 toggle.addEventListener('click', togglePlayWithClick);
