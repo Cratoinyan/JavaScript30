@@ -1,5 +1,4 @@
 const player = document.querySelector('.player');
-const background = document.querySelector('body');
 const video = player.querySelector('.viewer');
 const progress = player.querySelector('.progress');
 const progressBar = player.querySelector('.progress__filled');
@@ -7,11 +6,6 @@ const toggle = player.querySelector('.toggle');
 const skipButtons = player.querySelectorAll('[data-skip]');
 const ranges = player.querySelectorAll('.player__slider');
 
-
-function transition(){
-    const color = video.paused ? '#8e1dab' : '#000000' ;
-    background.style.background  = `${color}`;
-}
 
 function togglePlayWithClick(){
     if(video.paused)
@@ -74,6 +68,4 @@ video.addEventListener('click', togglePlayWithClick);
 video.addEventListener('timeupdate', adjsutProgressBar);
 video.addEventListener('play',updatePlayButton);
 video.addEventListener('pause',updatePlayButton);
-video.addEventListener('play',transition);
-video.addEventListener('pause',transition);
 toggle.addEventListener('click', togglePlayWithClick);
