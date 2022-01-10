@@ -20,7 +20,6 @@ function togglePlayWithClick(){
         video.pause();
 }
 
-
 function togglePlayWithSpace(e){
     if(e.code == 'Space'){
         if(video.paused)
@@ -46,6 +45,16 @@ function skipToTime(e){
         video.currentTime = video.currentTime + 25;
 }
 
+function skipToTimeWithArrows(e){
+    console.log(e);
+    if(e.code == 'ArrowRight'){
+        video.currentTime = video.currentTime + 25;
+    }
+    else if(e.code == 'ArrowLeft'){
+        video.currentTime = video.currentTime - 10;
+    }
+}
+
 function adjsutProgressBar(){
     const progressPercent = (video.currentTime / video.duration) * 100;
     progressBar.style.flexBasis = `${progressPercent}%`;
@@ -60,6 +69,7 @@ skipButtons.forEach(button => {
 });
 
 document.addEventListener('keydown', togglePlayWithSpace);
+document.addEventListener('keydown', skipToTimeWithArrows);
 video.addEventListener('click', togglePlayWithClick);
 video.addEventListener('timeupdate', adjsutProgressBar);
 video.addEventListener('play',updatePlayButton);
