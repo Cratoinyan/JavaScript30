@@ -19,17 +19,17 @@ function populateList(plates = [], platesList){
     platesList.innerHTML = plates.map((plate, i) => {
         return `
             <li>
-            <input type="checkbox" data-index="${i}" id="item${i}" ${plate.done ? 'checked': ''}/>
+                <input type="checkbox" data-index="${i}" id="item${i}" ${plate.done ? 'checked': ''} class="check"/>
                 <label for="item${i}">${plate.text}</label>
+                <input type="checkbox" data-index="${i}" id="deleteItem${i}" class="delete"/>
             </li>
         `;
     }).join('');
 }
 
 function toggleDone(e){
-    if(!e.target.matches('input'))
+    if(!e.target.matches('.check'))
         return;
-
     const element = e.target;
     const index = element.dataset.index;
 
@@ -38,7 +38,17 @@ function toggleDone(e){
     populateList(items, itemsList);
 }
 
+function deleteTapa(e){
+    if(!e.target.matches('.delete'))
+        return;
+    const deleted = items[e.target.dataset.index];
+    localStorage.removeItem(deleted);
+    items.splice(e.target.dataset.index, 1);
+    populateList(items, itemsList);
+}
+
 addItems.addEventListener('submit', addItem);
 itemsList.addEventListener('click', toggleDone);
+itemsList.addEventListener('click', deleteTapa);
 
 populateList(items, itemsList);

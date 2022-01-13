@@ -52,6 +52,10 @@ h2 {
   display: flex;
 }
 
+.plates li:hover .delete{
+  display: block;
+}
+
 .plates label {
   flex: 1;
   cursor: pointer;
