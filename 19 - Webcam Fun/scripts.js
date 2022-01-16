@@ -4,7 +4,7 @@ const ctx = canvas.getContext('2d');
 const strip = document.querySelector('.strip');
 const snap = document.querySelector('.snap');
 const buttons = document.querySelectorAll('.effect');
-let effect = {red: 0, split: 1, gScreen: 2};
+let effect = {default: 0, red: 1, split: 2, gScreen: 3};
 
 
 function getVideo(){
